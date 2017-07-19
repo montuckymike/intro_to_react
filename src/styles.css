@@ -1,0 +1,38 @@
+img.brandImg {
+  max-width: 40px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.jumbotron {
+  margin: 10px;
+  padding: 20px;
+  border: solid red;
+  background-color: #494949;
+  color: white;
+}
+
+.nav {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-item-container {
+  color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  display: inline-flex;
+}
+
+.sectionOne {
+  background-color: red;
+}
+
+.sectionTwo{
+  background-color: pink;
+}
