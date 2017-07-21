@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import WebApp from "./WebApp";
+import App from "./WebApp/App";
 import "./styles.css";
-import DATA from "./DATA"
+import CHAT_DATA from "./Chatter/DATA";
 import MappingAndFiltering from "./MappingAndFiltering";
+import ChatApp from "./Chatter/ChatApp";
 
-ReactDOM.render(<MappingAndFiltering
-   title={"Maps woo woo!"}
-   allTheData={DATA}
-   />, document.getElementById("root"))
+
+
+ReactDOM.render(<ChatApp data={CHAT_DATA}/>, document.getElementById("root"))

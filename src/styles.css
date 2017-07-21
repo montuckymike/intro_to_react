@@ -28,3 +28,13 @@
 .sectionTwo{
   background-color: pink;
 }
+
+.chat-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #494949;
+}
+
+.chat-container > div {
+  width: 33.3333%
+}
