@@ -65,21 +65,40 @@
   box-shadow: 10px 10px 5px #494949;
 }
 
+.hero-image {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://workshopcoyote.files.wordpress.com/2014/09/coyote_wallpaper_2.png");
+  height: 1000px;
+}
 
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-text {
   text-align: center;
-  height: 600px;
-  background-image: url(http://1.bp.blogspot.com/-gLaM6tltqCM/Up582lguEPI/AAAAAAAAApQ/uExs0WA4E50/w1200-h630-p-k-no-nu/12524-looney-tunes-yosemite-sam-free-looney-tunes-cartoons-wallpaper_1280x720.jpg);
-  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
-  .hero-text {
-    color: white;
-    background-color: rgba(132, 132, 132, 0.4);
-    width: auto;
+
+button {
+  background-color: rgba(73,73,73,0.6);
+  color: white;
+  border: solid #3498db 1px;
+  padding: 14px 40px;
+  font-size: 20px;
+  border-radius: 4px;
 }
+
+button:hover {
+  background-color: #3498db;
+}
+
+
+
+
 .acme-section-one {
   display: flex;
   align-items: center;
@@ -87,15 +106,97 @@
   justify-content: center;
 }
 
-.navbar {
-  border: solid red;
-  background-color: #ecf0f1;
+.navlinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 }
 
-.navlinks {
-  border: solid blue;
+.links {
+  float: left;
+  border-right: solid #bdc3c7 1px;
+}
+
+.Link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.Link:hover {
+  background-color: #3498db;
+}
+
+.hero-title {
+	margin: 50px auto;
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: ##ecf0f1;
+	opacity: 1;
+	font: 700 80px 'Bitter';
+}
+
+.gMap {
+  width:  400px;
+  height: 400px;
+}
+
+.big-title {
+  padding: 0;
+  margin: 0;
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: #3498db;
+	opacity: 1;
+	font: 700 60px "Bitter";
+}
+
+.acme-map {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(57, 60, 70,1);
+  margin: 0;
+  padding: 50px;
+  height: 500px;
+}
+
+.google-map {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin: 0;
+  padding: 50px;
+  height: 500px;
+}
+
+.big-phone {
+  padding-top: 20px;
+  margin: 0;
+  font-size: 50px;
+}
+
+.acme-info {
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
 }
