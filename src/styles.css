@@ -6,20 +6,6 @@
   color: white;
 }
 
-.nav {
-  background-color: #ecf0f1;
-  padding: 5px;
-}
-
-.nav-item-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: #2c3e50;
-  list-style-type: none;
-  font-family:  sans-serif;
-  font-size: 14px;
-}
 
 .sectionOne {
   background-color: red;
@@ -37,4 +23,79 @@
 
 .chat-container > div {
   width: 33.3333%
+}
+
+.card-summary {
+  padding-left: 10px;
+  overflow: scroll;
+}
+
+
+.customer-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:  space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.card-img {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.card-title {
+  display: flex;
+  background: rgba(44, 62, 80, 1);
+  padding-left: 10px;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.card {
+  width: 25%;
+  margin: 10px;
+  text-decoration: none;
+  color: #34495e;
+  background: #ecf0f1;
+  box-shadow: 10px 10px 5px #494949;
+}
+
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 600px;
+  background-image: url(http://1.bp.blogspot.com/-gLaM6tltqCM/Up582lguEPI/AAAAAAAAApQ/uExs0WA4E50/w1200-h630-p-k-no-nu/12524-looney-tunes-yosemite-sam-free-looney-tunes-cartoons-wallpaper_1280x720.jpg);
+  overflow: hidden;
+}
+  .hero-text {
+    color: white;
+    background-color: rgba(132, 132, 132, 0.4);
+    width: auto;
+}
+.acme-section-one {
+  display: flex;
+  align-items: center;
+  height: 350px;
+  justify-content: center;
+}
+
+.navbar {
+  border: solid red;
+  background-color: #ecf0f1;
+}
+
+.navlinks {
+  border: solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
 }

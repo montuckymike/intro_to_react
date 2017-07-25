@@ -6,7 +6,6 @@ import Jumbotron from "./Jumbotron";
 const App = () => {
   return (
   <div className="app-container">
-    <NavBar navLinks={["Home", "Contact Us", "About Us"]} />
     <Jumbotron
     header={"Super Duper Web App 👩🏻‍💼"}
     callToAction={"Built from React "}

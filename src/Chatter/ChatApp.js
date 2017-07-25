@@ -1,4 +1,5 @@
 import React from "react";
+import DATA from "./DATA";
 
 // const ChatApp = (props) => {
 //   const chatItems = props.data.chats
@@ -9,8 +10,8 @@ import React from "react";
 //   )
 // }
 
-const ChatApp = (props) => {
-  const chatItems = props.data.chats.map(function(item){
+const ChatApp = () => {
+  const chatItems = DATA.chats.map(function(item){
     return (
       <div>
       <h3> {item.username} </h3>
