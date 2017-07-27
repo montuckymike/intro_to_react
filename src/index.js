@@ -7,6 +7,8 @@ import App from "./WebApp/App";
 import ChatApp from "./Chatter/ChatApp";
 import MappingAndFiltering from "./MapAndFilter/MappingAndFiltering";
 import AcmeApp from "./Acme/AcmeApp";
+import GoogleMap from "./Acme/GoogleMap";
+import PlaygroundApp from "./Playground/PlaygroundApp";
 
 //OUr router should navigate to:
   // Home
@@ -17,7 +19,7 @@ import AcmeApp from "./Acme/AcmeApp";
 const Home = () => {
   return (
   <div>
-    <h3> Hello from Home </h3>
+    <h1> Hello from Home </h1>
   </div>
 )
 }
@@ -41,6 +43,7 @@ ReactDOM.render((
      <Route path="/Chatter" component={ChatApp} />
      <Route path="/MapAndFilter" component={MappingAndFiltering} />
      <Route path="/Acme" component={AcmeApp} />
+     <Route path="/Playground" component={PlaygroundApp} />
     </div>
   </Router>
 ), document.getElementById("root"));

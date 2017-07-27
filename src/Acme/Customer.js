@@ -7,14 +7,12 @@ const Customer = () => {
 
         <div className="card">
           <img className="card-img" src={item.img} />
-            <div className="card-title">
-              <h3> { item.name } </h3>
-            </div>
-          <div className="card-summary">
-          <h4> { item.email } </h4>
+          <div className="container">
+            <h1> { item.name } </h1>
+            <p className="card-title"> { item.email } </p>
+            <p><button className="card-button">Contact</button></p>
           </div>
         </div>
-
     )
   })
   return (
@@ -25,21 +23,5 @@ const Customer = () => {
     </div>
   )
 }
-
-// const Customer = (props) => {
-//   const customer = props.customers.map(function(customer, index){
-//     return (
-//       <div key = {index}>
-//         <h1>{customer.name} </h1>
-//       </div>
-//     )
-//   })
-//   return(
-//     <div>
-//       {customer}
-//     </div>
-//   )
-// }
-
 
 export default Customer;

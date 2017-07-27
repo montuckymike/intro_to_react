@@ -10,6 +10,7 @@ const NavigationBar = () => {
       <li className="links"> <Link className="Link " to="/Chatter"> Chatter </Link> </li>
       <li className="links"> <Link className="Link " to="/MappingAndFiltering"> MappingAndFiltering </Link> </li>
       <li className="links"> <Link className="Link " to="/Acme"> AcmeApp </Link> </li>
+      <li className="links"> <Link className="Link " to="/Playground"> PlaygroundApp </Link> </li>
     </ul>
   </div>
   )
