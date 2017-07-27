@@ -214,3 +214,19 @@ button:hover {
 .playground-main {
   margin-top: 50px;
 }
+
+.index {
+  margin-top: 50px;
+}
+
+.open-btn {
+  background-color: red;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.close-btn {
+  background-color: green;
+  border-radius: 20px;
+  font-size: 24px;
+}

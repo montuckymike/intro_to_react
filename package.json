@@ -5,6 +5,7 @@
   "dependencies": {
     "boostrap": "^1.0.0",
     "bootstrap": "^3.3.7",
+    "faker": "^4.1.0",
     "google-map-react": "^0.24.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

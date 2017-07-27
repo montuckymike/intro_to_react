@@ -38,12 +38,14 @@ ReactDOM.render((
   <Router>
     <div>
      <NavigationBar />
-     <Route exact path="/" component={Home} />
-     <Route path="/WebApp" component={App} />
-     <Route path="/Chatter" component={ChatApp} />
-     <Route path="/MapAndFilter" component={MappingAndFiltering} />
-     <Route path="/Acme" component={AcmeApp} />
-     <Route path="/Playground" component={PlaygroundApp} />
+       <div className="index">
+         <Route exact path="/" component={Home} />
+         <Route path="/WebApp" component={App} />
+         <Route path="/Chatter" component={ChatApp} />
+         <Route path="/MapAndFilter" component={MappingAndFiltering} />
+         <Route path="/Acme" component={AcmeApp} />
+         <Route path="/Playground" component={PlaygroundApp} />
+       </div>
     </div>
   </Router>
 ), document.getElementById("root"));

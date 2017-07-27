@@ -1,4 +1,5 @@
 import React from "react";
+import faker from "faker";
 
 // SMART / Container / has State
 // DUMB / Presentational / return HTML
@@ -19,16 +20,37 @@ const UsersList = (props) => {
   )
 }
 
+const Counter = (props) => {
+  return (
+    <div>
+      <h3> counter: { props.counter } </h3>
+      <button onClick={
+        () => props.increaseCounter() }> Increase Counter </button>
+      <button onClick={
+        () => props.decreaseCounter()}> Decreaase Counter </button>
+      }
+    </div>
+  )
+}
+
+
+
 class PlaygroundApp extends React.Component {
 
   state = {
     name: "Doug",
     counter: 0,
     users: null,
+    showCounter: true,
   }
 
+increaseCounter = this.increaseCounter.bind(this)
+
 componentDidMount() {
-  this.fetchUsersFromServer()
+  this.fetchUsersFromServer();
+//   const randomName = faker.name.firstName();
+//   const randomProduct= faker.commerce.product();
+// alert(randomProduct);
 }
 
 fetchUsersFromServer() {
@@ -51,40 +73,37 @@ increaseCounter(){
     { counter: this.state.counter +=1})
 }
 
-decreaseCounter(){
+decreaseCounter = () => {
   this.setState(
     { counter: this.state.counter -=1})
 }
 
+toggleCounter = () => {
+  this.setState({ showCounter: !this.state.showCounter })
+}
+
 
   render() {
+
     return(
       <div className="playground-main">
-        <h1> { this.state.name } </h1>
-        <p> { this.state.counter } </p>
-      <div>
-        <button onClick={() => this.increaseCounter()
-          }>
-            Increase likeABoss
-        </button>
+      <button
+      className={this.state.showCounter ? "open-btn" : "close-btn"}
+      onClick = { this.toggleCounter }>
 
-        <button onClick={() =>
-          this.decreaseCounter ()}>
-            Decrease likeABoss
-        </button>
+      { this.state.showCounter ? "Hide" : "Show"}
 
-        <button onClick={() =>
-        this.setState(
-          { counter: this.state.counter *=2})}>
-            Double Dat
-        </button>
 
-        <button onClick={() =>
-        this.setState(
-          { counter: this.state.counter =0})}>
-            Reset
-        </button>
-      </div>
+      </button>
+      {
+        this.state.showCounter
+        ? <Counter
+        counter={this.state.counter}
+        increaseCounter={this.increaseCounter}
+        decreaseCounter={this.decreaseCounter}
+        /> : null
+      }
+
       {
         this.state.users
         ? <UsersList usersData={this.state.users} />
