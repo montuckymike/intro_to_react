@@ -1,44 +1,24 @@
 import React from "react";
 import faker from "faker";
+import Counter from "./Counter";
+import UserList from "./UserList";
 
 // SMART / Container / has State
 // DUMB / Presentational / return HTML
 // this.setState({})
 
-const UsersList = (props) => {
-  return (
-    <div>
-      <h1> Found Users List </h1>
-      <ul>
-        {
-          props.usersData.map((user, index) => {
-            return <li key={index}> { user.name } </li>
-          })
-        }
-      </ul>
-    </div>
-  )
-}
 
-const Counter = (props) => {
-  return (
-    <div>
-      <h3> counter: { props.counter } </h3>
-      <button onClick={
-        () => props.increaseCounter() }> Increase Counter </button>
-      <button onClick={
-        () => props.decreaseCounter()}> Decreaase Counter </button>
-      }
-    </div>
-  )
-}
+
+
 
 
 
 class PlaygroundApp extends React.Component {
 
   state = {
-    name: "Doug",
+    firstName: null,
+    lastName: null,
+    img: null,
     counter: 0,
     users: null,
     showCounter: true,
@@ -52,63 +32,85 @@ componentDidMount() {
 //   const randomProduct= faker.commerce.product();
 // alert(randomProduct);
 }
-
-fetchUsersFromServer() {
+fetchUsersFromServer = () => {
   // pretend this is an AJAX function
-  const users = [
-    { name: "Doug", id: 1, },
-    { name: "Hannah", id: 2, },
-    { name: "Jette", id: 3, },
-    { name: "Joseph", id: 4, },
-  ]
-
-  setTimeout(() => {
-        this.setState({ users: users })
-      }, 3000);
+  //temporary array to hold people
+  // for loop to create person and push into temp array
+  // set state of user to temp array
+  const temporaryArray = [];
+  for(var i=0; i<20; i++){
+    temporaryArray.push({
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      img: faker.random.image(),
+    })
+  }
+  this.setState({ users: temporaryArray})
 }
+
 
 
 increaseCounter(){
   this.setState(
     { counter: this.state.counter +=1})
 }
-
 decreaseCounter = () => {
   this.setState(
     { counter: this.state.counter -=1})
 }
-
 toggleCounter = () => {
   this.setState({ showCounter: !this.state.showCounter })
 }
+updateFirstName = (event) => this.setState({firstName: event.target.value})
+updateLastName = (event) => this.setState({lastName: event.target.value})
+updateImg = (event) => this.setState({img: event.target.value})
+
+handleFormSubmit = (event) => {
+  event.preventDefault()
+  const person = {
+    firstName: this.state.firstName,
+    lastName: this.state.lastName,
+    img: this.state.img
+  }
+  let users = this.state.users
+  users.push(person)
+  console.log("users", users)
+  this.setState({users})
+}
+
 
 
   render() {
-
     return(
       <div className="playground-main">
-      <button
-      className={this.state.showCounter ? "open-btn" : "close-btn"}
-      onClick = { this.toggleCounter }>
 
-      { this.state.showCounter ? "Hide" : "Show"}
+        <form onSubmit={this.handleFormSubmit}>
+          <input onChange={this.updateFirstName}
+          />
+          <input onChange={this.updateLastName} />
+          <input onChange={this.updateImg} />
+          <button type="submit"> Submit </button>
+        </form>
 
-
-      </button>
-      {
-        this.state.showCounter
-        ? <Counter
-        counter={this.state.counter}
-        increaseCounter={this.increaseCounter}
-        decreaseCounter={this.decreaseCounter}
-        /> : null
-      }
-
-      {
-        this.state.users
-        ? <UsersList usersData={this.state.users} />
-        : <h1> Users Being Loaded </h1>
-      }
+        <button
+          className={this.state.showCounter ? "open-btn" : "close-btn"}
+          onClick = { this.toggleCounter }>
+        {
+          this.state.showCounter ? "Hide" : "Show"}
+        </button>
+        {
+          this.state.users
+          ? <UserList usersData={this.state.users} />
+          : <h1> Users Being Loaded </h1>
+        }
+        {
+          this.state.showCounter
+          ? <Counter
+          counter={this.state.counter}
+          increaseCounter={this.increaseCounter}
+          decreaseCounter={this.decreaseCounter}
+          /> : null
+        }
       </div>
     )
   }

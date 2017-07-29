@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.css"
 import "./styles.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
@@ -10,6 +11,8 @@ import AcmeApp from "./Acme/AcmeApp";
 import GoogleMap from "./Acme/GoogleMap";
 import PlaygroundApp from "./Playground/PlaygroundApp";
 
+
+
 //OUr router should navigate to:
   // Home
   // ChatApp
@@ -18,7 +21,7 @@ import PlaygroundApp from "./Playground/PlaygroundApp";
 
 const Home = () => {
   return (
-  <div>
+  <div className="jumbotron">
     <h1> Hello from Home </h1>
   </div>
 )
